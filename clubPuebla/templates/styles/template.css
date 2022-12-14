@@ -1,0 +1,29 @@
+body{
+    padding: 0%;
+    margin: 0%;
+}
+* {
+    outline: 5px solid red;
+}
+#image{
+    width:  1050px; /*or 70%, or what you want*/
+    height: 1365px; /*or 70%, or what you want*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#name{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    text-align: center;
+}
+#position{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
