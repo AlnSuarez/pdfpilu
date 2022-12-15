@@ -4,5 +4,5 @@ from .views import templateRed
 
 
 urlpatterns = [
-    path('templateRed', templateRed, name="templateRed")
+    path('template', templateRed, name="templateRed")
 ]
