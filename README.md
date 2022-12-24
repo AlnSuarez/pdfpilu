@@ -1,7 +1,7 @@
 
 # Datagram's API
 
-The following api is for datagram, the following shows how the objects should look like for each of the possible routes to which you can make requests
+The following api is for datagram, shows how the objects should look like for each of the possible routes to which you can make requests
 
 
 ## API Reference
