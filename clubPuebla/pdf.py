@@ -9,10 +9,10 @@ def render_to_pdf(template_src, context_dict={}):
 	template = get_template(template_src)
 	html  = template.render(context_dict)
 	f = open('temp.html', 'w')
-	options = {
-          'page-size': 'Letter',
-          'encoding': "UTF-8",
-       }
-	pdf = pdfkit.from_string(html, 'pedido_pilu.pdf', options=options)
+	# options = {
+    #       'page-size': 'Letter',
+    #       'encoding': "UTF-8",
+    #    }
+	pdf = pdfkit.from_string(html, 'pedido_pilu.pdf')
 	response = HttpResponse(pdf,content_type='application/pdf')
 	return response
