@@ -15,5 +15,4 @@ def render_to_pdf(template_src, context_dict={}, name=""):
        }
 	pdf = pdfkit.from_string(html, options=options)
 	response = HttpResponse(pdf,content_type='application/pdf')
-	response['Content-Disposition'] = 'attachment; filename=%s.pdf'% name
 	return response
