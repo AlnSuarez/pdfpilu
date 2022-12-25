@@ -13,6 +13,6 @@ def render_to_pdf(template_src, context_dict={}):
           'page-size': 'Letter',
           'encoding': "UTF-8",
        }
-	pdf = pdfkit.from_string(html, False, options=options)
+	pdf = pdfkit.from_string(html, 'pedido_pilu.pdf', options=options)
 	response = HttpResponse(pdf,content_type='application/pdf')
 	return response
