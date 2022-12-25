@@ -10,6 +10,6 @@ from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 @require_http_methods(["POST"])
 def templateRed(request):
-    pdf=render_to_pdf("templateRed.html", json.loads(request.body))
+    pdf=render_to_pdf("templateRed.html", json.loads(request.body), "plantillaPuebla.pdf")
     return HttpResponse(pdf, content_type="application/pdf")
 
