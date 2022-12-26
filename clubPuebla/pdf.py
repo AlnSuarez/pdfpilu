@@ -13,6 +13,8 @@ def render_to_pdf(template_src, context_dict={}):
           'page-size': 'Letter',
           'encoding': "UTF-8",
        }
+	filename =  "template_puebla.pdf"
 	pdf = pdfkit.from_string(html, False, options=options)
 	response = HttpResponse(pdf,content_type='application/pdf')
+	response['Content-Disposition'] = 'attachment; filename="{}"'.format(filename)
 	return response
