@@ -10,7 +10,7 @@ def render_to_pdf(template_src, context_dict={}):
 	html  = template.render(context_dict)
 	f = open('temp.html', 'w')
 	options = {
-          'page-size': 'Letter',
+          'page-size': 'A6',
           'encoding': "UTF-8",
        }
 	filename =  "template_puebla.pdf"
