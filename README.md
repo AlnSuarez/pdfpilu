@@ -20,14 +20,28 @@ The following api is for datagram, shows how the objects should look like for ea
 
 ```json
 {
-    "name": "BENJAMÍN PADILLA",
-    "position": "JUGADOR",
-    "color": "rojo",
-    "access": {
-        "one": "ex",
-        "two": "ca",
-        "three": "tr"
-    }
+    "list": [
+        {
+            "name": "ALAN SUAREZ",
+            "position": "JUGADOR",
+            "color": "permanente",
+            "access": {
+                "one": "ex",
+                "two": "ca",
+                "three": "tr"
+            }
+        },
+        {
+            "name": "BENJA PADILLA",
+            "position": "JUGADOR",
+            "color": "rosa",
+            "access": {
+                "one": "ex",
+                "two": "ca",
+                "three": "tr"
+            }
+        }
+    ]
 }
 
 ```
