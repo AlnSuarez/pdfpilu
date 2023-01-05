@@ -1,6 +1,10 @@
 <html>
 <head>
 <style>
+    /* *{
+        border-style: dashed;
+        border-color: red;
+    } */
     #oficinas{
         padding-left: 10px;
     }
@@ -29,25 +33,40 @@
         height: 100px;
         padding-top: 10px;
     }
+
     .prendas{
-        width: 70%;
+        width: 30%;
         padding: 10px;
     }
     .tela{
-        width: 30%;
+        width: 14%;
         padding: 10px;
 
     }
     .bordado{
-        padding: 10px;
-        font-size: 12px;
-    }
-    .estampado{
+        width: 14%;
         padding: 10px;
         font-size: 12px;
 
     }
-    
+    .estampado{
+        width: 14%;
+        padding: 10px;
+        font-size: 12px;
+
+    }
+    .variables{
+        width: 14%;
+        padding: 10px;
+
+    }
+    .cantidad{
+        width: 14%;
+        padding: 10px;
+    }
+  
+ 
+ 
     body{
         padding: 50px;
     }
@@ -73,6 +92,14 @@
         padding: 20px;
         width: 50%;
         font-size: 12px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .cellItem{
+        width: 16.6666%;
     }
 </style>
 <head>
@@ -130,6 +157,9 @@
             <tr>
                 <td class="centerCell" colspan="6">Detalle del pedido</td>
             </tr>
+    </table>
+    <table border="1" class="headerTable">
+
             <tr>
                 <td>Prenda</td>
                 <td class="centerCell">Tela</td>
@@ -141,7 +171,7 @@
             <!-- falta subtitle -->
             {% for item in pedidos %}
             <tr>
-                <td class="prendas">
+                <td class="prendas ">
                    <b>Prenda: </b>{{item.garment.name}} <br>
                     <b>Tipo de prenda:</b> {{item.garment.type}} <br>
                     <b>Variante:</b> {{item.variant.name}} <br>
@@ -156,11 +186,11 @@
 
                     <b>Comentarios:</b> {{item.description}}
                 </td>
-                <td class="tela">
+                <td class="tela  ">
                     <b>Tipo:</b> {{item.fabric.name}} <br>
                     <b>Color:</b> {{item.fabric.color}} <br>
                     <b>Composición:</b> {{item.fabric.composition}}</td>
-                <td class="bordado"> 
+                <td class="bordado "> 
                     <b>Espalda:</b> {{item.back_embroidery}} <br>
                     <b>Frente:</b> {{item.front_embroidery}} <br>
                     <b>Mangas:</b> {{item.sleeves_embroidery}} <br>
@@ -174,7 +204,7 @@
                     {% endif %}
 
                 </td>
-                <td class="estampado">
+                <td class="estampado ">
                     <b>Espalda:</b> {{item.back_stamped}} <br>
                     <b>Frente:</b> {{item.front_stamped}} <br>
                     <b>Mangas:</b> {{item.sleeves_stamped}} <br>
@@ -186,10 +216,10 @@
                     {% if item.notes_stamped|length > 0 %}
                         <b>Notas:</b> {{item.notes_stamped}}
                     {% endif %}
-                <td>
+                <td class="Variables">
                     <b>Variable: </b> {{item.variable.name}}
                 </td>
-                <td> <b>Cantidad:</b> {{item.units}}</td>
+                <td class="Cantidad"> <b>Cantidad:</b> {{item.units}}</td>
             </tr>
             {% endfor %}
            

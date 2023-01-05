@@ -27,8 +27,8 @@
         right: 0;
         top: 540px;
         text-align: center;
-        font-size: 40px;
-        width: 350px;
+        font-size: 45px;
+        width: 400px;
         color: #002261;
     }
     #name2{
@@ -40,7 +40,7 @@
         top: 540px;
         text-align: center;
         font-size: 30px;
-        width: 350px;
+        width: 400px;
         color: #002261;
     }
     .nameCuadro{
@@ -98,7 +98,7 @@
         margin-left: 20px;
     }
     .escudosCuadro{
-        margin-top: 80px;
+        margin-top: 50px;
         display: flex;
         justify-content: center;
     }
@@ -116,7 +116,7 @@
 
     #acceso1{
         position: relative;
-        top: 100px;
+        top: 140px;
         left: 80px;
         width: 80px;
         border-radius: 15px;
@@ -128,7 +128,7 @@
         margin-right: auto;
         left: 375px;
         right: 0;
-        top: 130px;
+        top: 140px;
         width: 80px;
         opacity: 50;
         border-radius: 15px;
@@ -176,6 +176,15 @@
         width: 100%;
         height: 400px;
     }
+    .folio{
+        font-family: 'Syncopate', sans-serif;
+        position: relative;
+        color: #002261;
+        font-size: 13px;
+        left: 50px;
+        top: 100px;
+    }
+    
     
 </style>
 <head>
@@ -186,12 +195,11 @@
                 <div class="perfilCuadro">
                 <img src="{{ element.img_base64 }}" id="profileImage" alt="">
                 </div>
-                {% if element.name|length < 12 %}
+                {% if element.name|length < 15 %}
                     <div class="nameCuadro">  
-                        {{element.name|length}}
                         <div id="name" >{{element.name}}</div>
                     </div>
-                {% elif element.name|length >= 12 and element.name|length <= 30 %}
+                {% elif element.name|length >= 15 and element.name|length <= 30 %}
                     <div class="nameCuadro">  
                         <div id="name2" >{{element.name}}</div>
                     </div>
@@ -214,6 +222,9 @@
                 {% for access in element.access %}
                 <img src="https://alnsuarez.github.io/repoImages/logos-accesos/{{ access }}.svg" id="acceso1" alt="">
                 {% endfor %}
+            </div>
+            <div class="folio">
+                <p>{{element.folio}}</p>
             </div>
         </div>
     {% endfor %}
