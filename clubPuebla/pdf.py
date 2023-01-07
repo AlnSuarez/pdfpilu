@@ -10,8 +10,13 @@ def render_to_pdf(template_src, context_dict={}):
 	html  = template.render(context_dict)
 	f = open('temp.html', 'w')
 	options = {
-          'page-size': 'A6',
-          'encoding': "UTF-8",
+          	'page-size': 'A6',
+		  	'margin-top': '0.0in',
+    		'margin-right': '0.0in',
+    		'margin-bottom': '0.0in',
+    		'margin-left': '0.0in',
+          	'encoding': "UTF-8",
+			'no-outline': None
        }
 	filename =  "template_puebla.pdf"
 	pdf = pdfkit.from_string(html, False, options=options)

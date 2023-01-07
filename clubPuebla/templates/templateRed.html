@@ -13,7 +13,7 @@
     } */
     #image{
         width:  700px; /*or 70%, or what you want*/
-        height: 1000px; /*or 70%, or what you want*/
+        height: 800px; /*or 70%, or what you want*/
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -78,7 +78,7 @@
     }
 
     .positionCuadro{
-        margin-top: 20px;
+        margin-top: 40px;
         display: flex;
         justify-content: center;
     }
@@ -98,25 +98,25 @@
         margin-left: 20px;
     }
     .escudosCuadro{
-        margin-top: 50px;
+        top: 20px;
         display: flex;
         justify-content: center;
     }
 
     #profileImage{
-        width: 200px;
-        height: 200px;
+        width: 240px;
+        height: 210px;
         border-radius: 15px;
     }
     .perfilCuadro{
-        margin-top: 290px;
+        margin-top: 310px;
         display: flex;
         justify-content: center;
     }
 
     #acceso1{
         position: relative;
-        top: 140px;
+        top: 160px;
         left: 80px;
         width: 80px;
         border-radius: 15px;
@@ -157,13 +157,15 @@
 
     .cuadro{
         display: inline-block;
-        
-        width:  760px; /*or 70%, or what you want*/
-        height: 1090px; /*or 70%, or what you want*/
-        z-index: 10;
-        background-position: center;
+        /* background-size: cover; */
+        width:  855px; /*or 70%, or what you want*/
+        height: 1165px; /*or 70%, or what you want*/
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: 855px 1165px; 
         background-repeat: no-repeat;
-        
+        background-position:  0% 0%; 
     }
 
     .access{
@@ -174,7 +176,7 @@
     .textos{
         display: block;
         width: 100%;
-        height: 400px;
+        height: 470px;
     }
     .folio{
         font-family: 'Syncopate', sans-serif;
@@ -182,7 +184,7 @@
         color: #002261;
         font-size: 13px;
         left: 50px;
-        top: 100px;
+        top: 130px;
     }
     
     
@@ -190,10 +192,10 @@
 <head>
 <body>
     {% for element in list %}
-        <div class="cuadro" style="background-image: url('https://alnsuarez.github.io/repoImages/{{ element.color }}.svg')">
+        <div class="cuadro" style="background-image: url('https://alnsuarez.github.io/repoImages/edited-images/{{ element.color }}.png')">
             <div class="textos">
                 <div class="perfilCuadro">
-                <img src="{{ element.img_base64 }}" id="profileImage" alt="">
+                    <img src="{{ element.img_base64 }}" id="profileImage" alt="">
                 </div>
                 {% if element.name|length < 15 %}
                     <div class="nameCuadro">  
