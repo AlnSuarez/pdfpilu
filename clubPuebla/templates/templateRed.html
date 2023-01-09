@@ -192,7 +192,7 @@
 <head>
 <body>
     {% for element in list %}
-        <div class="cuadro" style="background-image: url('https://alnsuarez.github.io/repoImages/edited-images/{{ element.color }}.png')">
+        <div class="cuadro" style="background-image: {% if element.isPermanent %} url('https://alnsuarez.github.io/repoImages/edited-images/permanente.png') {% else %} url('https://alnsuarez.github.io/repoImages/edited-images/{{ element.color }}.png') {% endif %}" >
             <div class="textos">
                 <div class="perfilCuadro">
                     <img src="{{ element.img_base64 }}" id="profileImage" alt="">
