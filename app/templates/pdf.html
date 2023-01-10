@@ -35,33 +35,31 @@
     }
 
     .prendas{
-        width: 30%;
+        width: 16.6666%;
         padding: 10px;
     }
     .tela{
-        width: 14%;
+        width: 16.6666%;
         padding: 10px;
 
     }
     .bordado{
-        width: 14%;
+        width: 16.6666%;
         padding: 10px;
-        font-size: 12px;
 
     }
     .estampado{
-        width: 14%;
+        width: 16.6666%;
         padding: 10px;
-        font-size: 12px;
 
     }
     .variables{
-        width: 14%;
+        width: 16.6666%;
         padding: 10px;
 
     }
     .cantidad{
-        width: 14%;
+        width: 16.6666%;
         padding: 10px;
     }
   
@@ -131,9 +129,9 @@
     
     <table border="1">
         <tr>
-            <td colspan="2" class="centerCell">CLIENTE: DIPASA INTERNACIONAL DE MÉXICO</td>
-            <td class="centerCell">ORDEN DE COMPRA:</td>
-            <td class="centerCell" colspan="3">FECHA: 2022-05-30</td>
+            <td colspan="2" class="centerCell">CLIENTE: {{pedidos.0.order.client_id.company_name}} </td>
+            <td class="centerCell">ORDEN DE COMPRA: {{pedidos.0.order.id}}</td>
+            <td class="centerCell" colspan="3">FECHA: {{pedidos.0.order.entry_date}}</td>
         </tr>
     
             <tr>
@@ -161,7 +159,7 @@
     <table border="1" class="headerTable">
 
             <tr>
-                <td>Prenda</td>
+                <td class="centerCell">Prenda</td>
                 <td class="centerCell">Tela</td>
                 <td class="centerCell">Bordado</td>
                 <td class="centerCell">Estampado</td>
@@ -183,8 +181,9 @@
                         <li>{{size.name}}/{{size.units}} piezas</li>
                         {% endfor %}
                     </ul>
-
-                    <b>Comentarios:</b> {{item.description}}
+                    {% if item.description|length > 0 %}
+                        <b>Comentarios:</b> {{item.description}}
+                    {% endif %}
                 </td>
                 <td class="tela  ">
                     <b>Tipo:</b> {{item.fabric.name}} <br>
