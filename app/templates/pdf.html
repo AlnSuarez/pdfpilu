@@ -188,7 +188,12 @@
                 <td class="tela  ">
                     <b>Tipo:</b> {{item.fabric.name}} <br>
                     <b>Color:</b> {{item.fabric.color}} <br>
-                    <b>Composición:</b> {{item.fabric.composition}}</td>
+                    {% if item.fabric.composition|length > 0 %}
+                        <b>Composición:</b> {{item.fabric.composition}}
+                    {% endif %}
+                    <b>Ancho</b> {{item.fabric.width}}
+                </td>
+                    
                 <td class="bordado "> 
                     <b>Espalda:</b> {{item.back_embroidery}} <br>
                     <b>Frente:</b> {{item.front_embroidery}} <br>
@@ -216,7 +221,12 @@
                         <b>Notas:</b> {{item.notes_stamped}}
                     {% endif %}
                 <td class="Variables">
-                    <b>Variable: </b> {{item.variable.name}}
+                    <b>Variables: </b>
+                    <ul>
+                        {% for variable in item.variable.variables %}
+                            <li>{{variable}}</li>
+                        {% endfor %}
+                    </ul>
                 </td>
                 <td class="Cantidad"> <b>Cantidad:</b> {{item.units}}</td>
             </tr>
